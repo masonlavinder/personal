@@ -1,0 +1,45 @@
+.home-body-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; 
+    height: 100vh;
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 30px;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    overflow-y: hidden; 
+  }
+  
+
+.bottom-bar-container {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.home-wrapper {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .floating-right-arrow {
+    position: fixed; /* Ensures the element stays in place */
+    bottom: 50%; /* Distance from the bottom of the viewport */
+    right: 20px; /* Distance from the right of the viewport */
+    padding: 10px 15px; /* Padding for the element */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    z-index: 1000; /* Ensures the element is on top of other content */
+  }
+
+  .floating-left-arrow {
+    position: fixed; /* Ensures the element stays in place */
+    bottom: 50%; /* Distance from the bottom of the viewport */
+    left: 20px; /* Distance from the right of the viewport */
+    padding: 10px 15px; /* Padding for the element */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    z-index: 1000; /* Ensures the element is on top of other content */
+  }
