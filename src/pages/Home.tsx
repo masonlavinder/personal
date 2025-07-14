@@ -4,6 +4,32 @@ import MenuBar from '../components/Menubar';
 
 const Home: React.FC = () => {
 
+    const returnComputerImage = () => {
+        return (
+          <pre>
+      {`         ______________
+        /             /|
+       /             / |
+      /____________ /  |
+      | ___________ |  |
+      ||           ||  |
+      ||           ||  |
+      ||           ||  |
+      ||___________||  |
+      |   _______   | //
+      |  (_______)  |//
+      |_____________|/ ))
+       (               ((              
+        )               ==============__         
+      .======================.       /  \\
+      | :::::::::::::::: ::: |      | || |
+      | ::::::::::::::[] ::: |      |    |
+      | --------------- :::  |       \\__/
+      \`----------------------'`}
+          </pre>
+        );
+      };
+
   return (
     <div className="main-wrapper">
         <div className="header">
@@ -24,7 +50,12 @@ const Home: React.FC = () => {
             <div className="content-split">
                 <div className="content-left content-column">
                     <div className="content-bubble">
-                        <h1>visual</h1>
+                        <div className="content-split">
+                            <p>{returnComputerImage()}</p>
+                            <div>
+                                <h1>Lavinder</h1>
+                            </div>
+                        </div>
                     </div>
                     <div className="content-bubble">
                         <h1>about me</h1>

@@ -257,25 +257,25 @@
     gap: 1rem;
     width: 100%;
   }
-  
+
   /* Media query for small screens */
-@media (max-width: 768px) {
-    .content-split {
-      flex-direction: column; /* Stack vertically on small screens */
+    @media (max-width: 768px) {
+        .content-split {
+        flex-direction: column; /* Stack vertically on small screens */
+        }
     }
-  }
 
   .content-left {
     flex: 2;
     padding: 1rem;
-    background-color: #f9fafb;
+    background-color: #79b633;
     border-radius: 8px;
   }
 
     .content-right {
         flex: 1;
         padding: 1rem;
-        background-color: #f3f4f6;
+        background-color: #1f3a6f;
         border-radius: 8px;
     }
     
@@ -305,4 +305,10 @@
     .generic-button.hover{
         background-color: #ffffff;
         color: rgb(0, 0, 0);
+    }
+
+    .content {
+        padding: 1rem;
+        background-color: #f3f4f6;
+        width: 100%;
     }
