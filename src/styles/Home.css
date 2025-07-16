@@ -37,6 +37,7 @@
     font-size: 16px;
     background-color: none;
     background: none;
+    font-family: "Libertinus Math";
 }
 
 .theme-button:hover {
@@ -85,6 +86,7 @@
     transition: all 0.2s ease;
     border-radius: 4px;
     white-space: nowrap;
+    font-family: "Libertinus Math";
   }
 
   .menu-button:hover:not(.disabled) {
@@ -140,6 +142,7 @@
     text-align: left;
     font-size: 14px;
     cursor: pointer;
+    font-family: "Libertinus Math";
     transition: background-color 0.2s ease;
   }
 
@@ -162,6 +165,7 @@
     border: none;
     cursor: pointer;
     padding: 0;
+    font-family: "Libertinus Math";
   }
 
   .hamburger-line {
@@ -210,6 +214,7 @@
     justify-content: space-between;
     padding: 12px 0;
     border-bottom: 1px solid #f3f4f6;
+    font-family: "Libertinus Math";
   }
 
   .mobile-dropdown {
@@ -236,10 +241,12 @@
   @media (max-width: 768px) {
     .menu-items {
       display: none;
+      font-family: "Libertinus Math";
     }
 
     .mobile-menu-button {
       display: flex;
+      font-family: "Libertinus Math";
     }
 }  
 

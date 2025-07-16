@@ -1,34 +1,9 @@
 import React from 'react';
 import '../styles/Home.css';
-import MenuBar from '../components/Menubar';
+import MenuBar from '../components/MenuBar.tsx';
+import { returnComputerImage } from '../components/ComputerImage.tsx';
 
 const Home: React.FC = () => {
-
-    const returnComputerImage = () => {
-        return (
-          <pre>
-      {`         ______________
-        /             /|
-       /             / |
-      /____________ /  |
-      | ___________ |  |
-      ||           ||  |
-      ||           ||  |
-      ||           ||  |
-      ||___________||  |
-      |   _______   | //
-      |  (_______)  |//
-      |_____________|/ ))
-       (               ((              
-        )               ==============__         
-      .======================.       /  \\
-      | :::::::::::::::: ::: |      | || |
-      | ::::::::::::::[] ::: |      |    |
-      | --------------- :::  |       \\__/
-      \`----------------------'`}
-          </pre>
-        );
-      };
 
   return (
     <div className="main-wrapper">

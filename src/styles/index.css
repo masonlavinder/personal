@@ -2,4 +2,6 @@
     --background-color: #e6b222;
     
     background-color: var(--background-color);
+    font-family: "Libertinus Math";    
+      
 }
