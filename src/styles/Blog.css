@@ -1,0 +1,42 @@
+/* Blog.css */
+.main-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: sans-serif;
+  }
+  
+  .post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .post-item {
+    border-bottom: 1px solid #ccc;
+    padding: 1rem 0;
+    transition: background-color 0.2s ease;
+  }
+  
+  .post-item:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .post-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .post-title {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .post-date {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  

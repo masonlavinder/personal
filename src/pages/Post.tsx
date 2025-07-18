@@ -83,46 +83,44 @@ interface BlogPostDisplayProps {
 
 const BlogPostDisplay: React.FC<BlogPostDisplayProps> = ({ post }) => {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <nav className="mb-8">
+    <div>
+      <nav >
         <Link 
-          to="/blog" 
-          className="text-blue-600 hover:text-blue-800 transition-colors inline-flex items-center gap-1"
+          to="/personal/blog" 
         >
           ← Back to Blog
         </Link>
       </nav>
       
-      <article className="bg-white rounded-lg shadow-sm p-8">
-        <header className="mb-8">
-          <div className="flex items-center gap-2 mb-4">
+      <article >
+        <header >
+          <div >
             {post.featured && (
-              <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">
+              <span>
                 Featured
               </span>
             )}
-            <span className="text-sm text-gray-500">
+            <span >
               {formatDate(post.publishDate)}
             </span>
-            <span className="text-sm text-gray-500">•</span>
-            <span className="text-sm text-gray-500">
+            <span >•</span>
+            <span >
               {post.readingTime} min read
             </span>
           </div>
           
-          <h1 className="text-4xl font-bold mb-4 text-gray-900">
+          <h1 >
             {post.title}
           </h1>
           
-          <div className="flex items-center justify-between pb-6 border-b">
-            <span className="text-gray-600 font-medium">
+          <div >
+            <span >
               by {post.author}
             </span>
-            <div className="flex flex-wrap gap-1">
+            <div >
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full"
                 >
                   {tag}
                 </span>
@@ -131,7 +129,7 @@ const BlogPostDisplay: React.FC<BlogPostDisplayProps> = ({ post }) => {
           </div>
         </header>
         
-        <div className="prose-content">
+        <div >
           <MarkdownRenderer content={post.content} />
         </div>
       </article>
@@ -177,13 +175,8 @@ const Post: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="max-w-4xl mx-auto px-4 py-8 text-center">
-        <div className="animate-pulse">
-          <div className="h-8 bg-gray-200 rounded mb-4"></div>
-          <div className="h-4 bg-gray-200 rounded mb-2"></div>
-          <div className="h-4 bg-gray-200 rounded mb-2"></div>
-          <div className="h-4 bg-gray-200 rounded"></div>
-        </div>
+      <div>
+        <p>Loading</p>
       </div>
     );
   }
