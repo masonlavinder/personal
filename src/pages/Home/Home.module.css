@@ -265,6 +265,14 @@
     width: 100%;
   }
 
+  .contentVerticalSplit {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+  }
+
   /* Media query for small screens */
     @media (max-width: 768px) {
         .contentSplit {
@@ -326,15 +334,20 @@
     }
 
     .recentPostItem {
-        margin-bottom: 1rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid var(--white);
+        margin-bottom: 0.75rem;
+        background-color: var(--green-primary);
+        border-radius: 8px;
+        padding: 0.75rem;
+        transition: all 0.2s ease;
     }
 
     .recentPostItem:last-child {
-        border-bottom: none;
         margin-bottom: 0;
-        padding-bottom: 0;
+    }
+
+    .recentPostItem:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
     }
 
     .recentPostLink {
@@ -354,7 +367,7 @@
         margin: 0;
         font-size: 0.875rem;
         color: var(--white);
-        opacity: 0.8;
+        opacity: 0.9;
     }
 
     .recentPostLink:hover .recentPostTitle {

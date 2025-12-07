@@ -1,7 +1,7 @@
 export const returnComputerImage = () => {
     return (
       <pre>
-  {`       
+  {`
            ______________
           /             /|
          /             / |

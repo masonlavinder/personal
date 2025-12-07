@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Home.module.css';
-import MenuBar from '../../components/MenuBar.tsx';
 import { returnComputerImage } from '../../components/ComputerImage.tsx';
 import { blogService } from '../../services/blogService';
 import { BlogPostSummary } from '../../types/blog';
@@ -24,29 +23,15 @@ const Home: React.FC = () => {
 
   return (
     <div className={styles.mainWrapper}>
-        <div className={styles.header}>
-            <MenuBar
-                items={[
-                    { id: 'home', label: 'Home', href: '/personal/' },
-                    { id: 'blog', label: 'Blog', href: '/personal/blog' },
-                ]}
-                className={styles.headerMenu}
-                onItemClick={(item) => console.log(`Clicked on ${item.label}`)}
-                themeButton={{
-                    label: 'Switch it up',
-                    onClick: () => console.log('Theme toggled')
-                }}
-                />
-        </div>
         <div className={styles.content}>
             <div className={styles.contentSplit}>
                 <div className={`${styles.contentLeft} ${styles.contentColumn}`}>
                     <div className={styles.contentBubble}>
-                        <div className={styles.contentSplit}>
-                            <p>{returnComputerImage()}</p>
+                        <div className={styles.contentVerticalSplit}>
                             <div>
-                                <h1>Lavinder</h1>
+                                <h1>mason lavinder</h1>
                             </div>
+                            <div>{returnComputerImage()}</div>
                         </div>
                     </div>
                     <div className={styles.contentBubble}>

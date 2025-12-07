@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import GenericButton from './GenericButton';
+import GenericButton from '../GenericButton';
 import styles from './MenuBar.module.css';
 
 interface MenuItem {

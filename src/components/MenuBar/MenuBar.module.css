@@ -11,7 +11,7 @@
 .menuContainer {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 20px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,13 +22,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 2px solid var(--white);
 }
 
 .menuItems {
     display: flex;
     align-items: center;
-    gap: 0;
+    gap: 10px;
     justify-content: center;
 }
 
@@ -40,10 +39,10 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 20px;
+    padding: 10px 10px;
     background: none;
     border: none;
-    font-size: 16px;
+    font-size: 28px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;

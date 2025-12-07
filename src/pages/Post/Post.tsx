@@ -5,7 +5,6 @@ import remarkGfm from 'remark-gfm';
 import { blogService, formatDate } from '../../services/blogService';
 import { BlogPost } from '../../types/blog';
 import NotFound from '../NotFound';
-import MenuBar from '../../components/MenuBar';
 import styles from './Post.module.css'
 
 interface MarkdownRendererProps {
@@ -30,13 +29,6 @@ interface BlogPostDisplayProps {
 
 const BlogPostDisplay: React.FC<BlogPostDisplayProps> = ({ post }) => {
   return (
-    <>
-      <MenuBar
-        items={[
-          { id: 'home', label: 'Home', href: '/personal/' },
-          { id: 'blog', label: 'Blog', href: '/personal/blog' },
-        ]}
-      />
       <div>
         <article className={styles.article}>
           <header className={styles.header}>
@@ -79,7 +71,6 @@ const BlogPostDisplay: React.FC<BlogPostDisplayProps> = ({ post }) => {
           <MarkdownRenderer content={post.content} />
         </article>
       </div>
-    </>
   );
 };
 

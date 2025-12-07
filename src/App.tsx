@@ -5,11 +5,18 @@ import Home from './pages/Home/Home';
 import Post from './pages/Post/Post';
 import NotFound from './pages/NotFound';
 import Blog from './pages/BlogList/BlogList';
+import MenuBar from './components/MenuBar/MenuBar';
 
 const App: React.FC = () => {
   return (
     <>
     <Router>
+        <MenuBar
+          items={[
+            { id: 'home', label: 'home', href: '/personal/' },
+            { id: 'blog', label: 'blog', href: '/personal/blog' },
+          ]}
+        />
         <Routes>
             <Route path="/personal/" element={<Home />} />
             <Route path="/personal/home" element={<Home />} />

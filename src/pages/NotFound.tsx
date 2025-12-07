@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import MenuBar from '../components/MenuBar';
+import MenuBar from '../components/MenuBar/MenuBar';
 import styles from './NotFound.module.css';
 
 const NotFound: React.FC = () => {
