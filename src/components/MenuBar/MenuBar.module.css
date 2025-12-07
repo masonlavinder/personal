@@ -1,7 +1,6 @@
 /* MenuBar.module.css */
 .menuBar {
-    background: null;
-    border: none;
+    background: transparent;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -29,6 +28,10 @@
     align-items: center;
     gap: 10px;
     justify-content: center;
+    background-color: var(--background-color-transparent);
+    backdrop-filter: blur(10px);
+    border-radius: 6px;
+    padding: 5px;
 }
 
 .menuItem {
@@ -54,8 +57,8 @@
 }
 
 .menuButton:hover:not(.disabled) {
-    background-color: var(--gray-100);
-    color: var(--gray-900);
+    background-color: var(--blue-primary);
+    color: var(--white);
 }
 
 .menuButton.disabled {
@@ -138,14 +141,15 @@
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
-    background-color: none;
-    background: none;
+    background-color: rgba(226, 232, 240, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 6px;
     font-family: "Libertinus Math";
 }
 
 .themeButton:hover {
-    background-color: var(--gray-100);
-    color: var(--gray-900);
+    background-color: var(--blue-primary);
+    color: var(--white);
 }
 
 .mobileMenuButton {

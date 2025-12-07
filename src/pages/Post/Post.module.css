@@ -22,12 +22,10 @@
 }
 
 .article {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0;
     background-color: var(--white);
     border-radius: 8px;
     overflow: hidden;
+    margin-inline: 100px;
 }
 
 .header {
@@ -105,7 +103,7 @@
 .content {
     line-height: 1.75;
     color: var(--gray-700);
-    padding: 2rem;
+    margin-inline: 100px;
 }
 
 /* Markdown content styling */

@@ -47,6 +47,24 @@ const Home: React.FC = () => {
                 <div className={`${styles.contentRight} ${styles.contentColumn}`}>
                     <div className={styles.contentBubble}>
                         <h1>where to find me</h1>
+                        <div className={styles.socialLinksContainer}>
+                            <a
+                                href="https://www.linkedin.com/in/mason-lavinder/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.linkedinLink}
+                            >
+                                LinkedIn
+                            </a>
+                            <a
+                                href="https://github.com/masonlavinder"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.linkedinLink}
+                            >
+                                GitHub
+                            </a>
+                        </div>
                     </div>
                     <div className={styles.contentBubble}>
                         <h1>recent blog</h1>

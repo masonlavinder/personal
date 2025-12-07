@@ -1,7 +1,7 @@
 :root {
     /* Main brand colors */
     --background-color: #e6b222;
-
+    --background-color-transparent: rgba(230, 178, 34, 0.3);
     /* Grays */
     --gray-50: #f9fafb;
     --gray-100: #f3f4f6;
@@ -30,7 +30,7 @@
 
     /* Custom brand colors */
     --green-primary: #79b633;
-    --blue-primary: #1f3a6f;
+    --blue-primary: rgb(31, 58, 111);
 
     /* Shadows */
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);

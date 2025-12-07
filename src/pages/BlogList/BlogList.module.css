@@ -1,9 +1,6 @@
 /* Blog.module.css */
 .mainWrapper {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-    font-family: sans-serif;
+    margin-inline: 100px;
   }
 
   .searchInput {
