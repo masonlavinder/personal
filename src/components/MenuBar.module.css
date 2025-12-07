@@ -1,0 +1,241 @@
+/* MenuBar.module.css */
+.menuBar {
+    background: null;
+    border: none;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.menuContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+.menuCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid var(--white);
+}
+
+.menuItems {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+}
+
+.menuItem {
+    position: relative;
+}
+
+.menuButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-family: "Libertinus Math";
+    text-decoration: none;
+    color: inherit;
+}
+
+.menuButton:hover:not(.disabled) {
+    background-color: var(--gray-100);
+    color: var(--gray-900);
+}
+
+.menuButton.disabled {
+    color: var(--gray-400);
+    cursor: not-allowed;
+}
+
+.dropdownArrow {
+    font-size: 10px;
+    transition: transform 0.2s ease;
+}
+
+.dropdownArrow.rotated {
+    transform: rotate(180deg);
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background: var(--white);
+    border: none;
+    border-radius: 6px;
+    box-shadow: var(--shadow-md);
+    padding: 8px 0;
+    z-index: 1001;
+    animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdownItem {
+    display: block;
+    width: 100%;
+    padding: 10px 16px;
+    background: null;
+    border: none;
+    text-align: left;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: "Libertinus Math";
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.dropdownItem:hover:not(.disabled) {
+    background-color: var(--gray-100);
+}
+
+.dropdownItem.disabled {
+    color: var(--gray-400);
+    cursor: not-allowed;
+}
+
+.rightSection {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+}
+
+.themeButtonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.themeButton {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: none;
+    background: none;
+    font-family: "Libertinus Math";
+}
+
+.themeButton:hover {
+    background-color: var(--gray-100);
+    color: var(--gray-900);
+}
+
+.mobileMenuButton {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: "Libertinus Math";
+}
+
+.hamburgerLine {
+    width: 100%;
+    height: 2px;
+    transition: all 0.3s ease;
+    background-color: var(--gray-900);
+}
+
+.mobileMenuButton.open .hamburgerLine:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobileMenuButton.open .hamburgerLine:nth-child(2) {
+    opacity: 0;
+}
+
+.mobileMenuButton.open .hamburgerLine:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.mobileMenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border: none;
+    box-shadow: var(--shadow-md);
+    padding: 16px 20px;
+    animation: slideDown 0.3s ease;
+}
+
+.mobileMenu.open {
+    display: block;
+}
+
+.mobileMenuItem {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.mobileMenuItem .menuButton {
+    width: 100%;
+    justify-content: space-between;
+    padding: 12px 0;
+    border: none;
+    font-family: "Libertinus Math";
+}
+
+.mobileDropdown {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    background: var(--gray-50);
+    margin-top: 8px;
+    border-radius: 4px;
+    animation: none;
+}
+
+.mobileDropdown .dropdownItem {
+    padding: 8px 16px;
+    border: none;
+}
+
+/* Responsive breakpoint */
+@media (max-width: 768px) {
+    .menuItems {
+        display: none;
+        font-family: "Libertinus Math";
+    }
+
+    .mobileMenuButton {
+        display: flex;
+        font-family: "Libertinus Math";
+    }
+}

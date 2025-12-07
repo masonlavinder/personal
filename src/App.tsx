@@ -1,11 +1,10 @@
 // import { useState } from 'react'
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Post from './pages/Post';
+import Home from './pages/Home/Home';
+import Post from './pages/Post/Post';
 import NotFound from './pages/NotFound';
-import Blog from './pages/Blog';
-import TestMarkdownLoading from './pages/TestMarkdownLoading';
+import Blog from './pages/BlogList/BlogList';
 
 const App: React.FC = () => {
   return (
@@ -16,7 +15,6 @@ const App: React.FC = () => {
             <Route path="/personal/home" element={<Home />} />
             <Route path="/personal/blog" element={<Blog />} />
             <Route path="/personal/blog/:slug" element={<Post />} />
-            <Route path="personal/test-markdown-loading" element={<TestMarkdownLoading />} />
             <Route path="/personal/not-found" element={<NotFound />} />
             <Route path="/personal/*" element={<Home />} />
         </Routes>

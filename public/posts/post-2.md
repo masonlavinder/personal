@@ -1,7 +1,7 @@
 ---
-id: "1"
-title: "Getting Started"
-slug: "my-first-post"
+id: "2"
+title: "another test"
+slug: "another-test"
 author: "Mason Lavinder"
 publishDate: "2024-01-15"
 tags: ["react", "typescript", "javascript", "frontend"]

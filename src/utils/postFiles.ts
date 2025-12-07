@@ -1,6 +1,7 @@
 // config/posts-config.ts
 export const postFiles = [
     '/post-1.md',
+    '/post-2.md',
 ];
   
 // Helper to get slug from filename

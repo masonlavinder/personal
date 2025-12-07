@@ -1,7 +1,41 @@
 :root {
+    /* Main brand colors */
     --background-color: #e6b222;
-    
+
+    /* Grays */
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #e2e8f0;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+
+    /* Neutral colors */
+    --white: #ffffff;
+    --black: #000000;
+    --border-gray: #ccc;
+    --text-light: #666;
+    --text-dark: #333;
+
+    /* Blue colors */
+    --blue-50: #dbeafe;
+    --blue-500: #3b82f6;
+    --blue-600: #2563eb;
+    --blue-700: #1d4ed8;
+    --blue-800: #1e40af;
+
+    /* Custom brand colors */
+    --green-primary: #79b633;
+    --blue-primary: #1f3a6f;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+
     background-color: var(--background-color);
-    font-family: "Libertinus Math";    
-      
+    font-family: "Libertinus Math";
 }

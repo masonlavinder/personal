@@ -1,16 +1,25 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-
+import MenuBar from '../components/MenuBar';
+import styles from './NotFound.module.css';
 
 const NotFound: React.FC = () => {
     const { id } = useParams<{ id: string }>();
-    
+
     return (
-        <div className="max-w-4xl mx-auto px-4 py-8 text-center">
-        <h1 className="text-4xl font-bold mb-4">404 - Not Found</h1>
-        <p className="text-lg">The page you are looking for does not exist!</p>
-        {id && <p className="text-sm text-gray-500">ID: {id}</p>}
-        </div>
+        <>
+            <MenuBar
+                items={[
+                    { id: 'home', label: 'Home', href: '/personal/' },
+                    { id: 'blog', label: 'Blog', href: '/personal/blog' },
+                ]}
+            />
+            <div className={styles.container}>
+                <h1 className={styles.title}>404 - Not Found</h1>
+                <p className={styles.message}>The page you are looking for does not exist!</p>
+                {id && <p className={styles.id}>ID: {id}</p>}
+            </div>
+        </>
     );
 }
 

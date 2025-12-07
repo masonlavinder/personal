@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import GenericButton from './GenericButton';
-
+import styles from './MenuBar.module.css';
 
 interface MenuItem {
   id: string;
@@ -52,33 +53,79 @@ const MenuBar: React.FC<MenuBarProps> = ({
     const isActive = activeDropdown === item.id;
 
     return (
-      <div key={item.id} className={`menu-item ${isMobile ? 'mobile-menu-item' : ''}`}>
+      <div key={item.id} className={isMobile ? styles.mobileMenuItem : styles.menuItem}>
         {/* These are the menu items that will be rendered in the menu bar.
         Render link if href is provided, otherwise render a button */}
-        <button
-          onClick={() => handleItemClick(item)}
-          disabled={item.disabled}
-          className={`menu-button ${item.disabled ? 'disabled' : ''}`}
-        >
-          <span>{item.label}</span>
-          {hasChildren && (
-            <span className={`dropdown-arrow ${isActive ? 'rotated' : ''}`}>
-              ▼
-            </span>
-          )}
-        </button>
+        {item.href && !hasChildren ? (
+          <Link
+            to={item.href}
+            className={`${styles.menuButton} ${item.disabled ? styles.disabled : ''}`}
+            onClick={(e) => {
+              if (item.disabled) {
+                e.preventDefault();
+                return;
+              }
+              if (item.onClick) {
+                item.onClick();
+              }
+              if (onItemClick) {
+                onItemClick(item);
+              }
+              setMobileMenuOpen(false);
+            }}
+          >
+            <span>{item.label}</span>
+          </Link>
+        ) : (
+          <button
+            onClick={() => handleItemClick(item)}
+            disabled={item.disabled}
+            className={`${styles.menuButton} ${item.disabled ? styles.disabled : ''}`}
+          >
+            <span>{item.label}</span>
+            {hasChildren && (
+              <span className={`${styles.dropdownArrow} ${isActive ? styles.rotated : ''}`}>
+                ▼
+              </span>
+            )}
+          </button>
+        )}
 
         {hasChildren && isActive && (
-          <div className={`dropdown-menu ${isMobile ? 'mobile-dropdown' : ''}`}>
+          <div className={isMobile ? styles.mobileDropdown : styles.dropdownMenu}>
             {item.children!.map((child) => (
-              <button
-                key={child.id}
-                onClick={() => handleItemClick(child)}
-                disabled={child.disabled}
-                className={`dropdown-item ${child.disabled ? 'disabled' : ''}`}
-              >
-                {child.label}
-              </button>
+              child.href ? (
+                <Link
+                  key={child.id}
+                  to={child.href}
+                  className={`${styles.dropdownItem} ${child.disabled ? styles.disabled : ''}`}
+                  onClick={(e) => {
+                    if (child.disabled) {
+                      e.preventDefault();
+                      return;
+                    }
+                    if (child.onClick) {
+                      child.onClick();
+                    }
+                    if (onItemClick) {
+                      onItemClick(child);
+                    }
+                    setActiveDropdown(null);
+                    setMobileMenuOpen(false);
+                  }}
+                >
+                  {child.label}
+                </Link>
+              ) : (
+                <button
+                  key={child.id}
+                  onClick={() => handleItemClick(child)}
+                  disabled={child.disabled}
+                  className={`${styles.dropdownItem} ${child.disabled ? styles.disabled : ''}`}
+                >
+                  {child.label}
+                </button>
+              )
             ))}
           </div>
         )}
@@ -87,43 +134,43 @@ const MenuBar: React.FC<MenuBarProps> = ({
   };
 
   return (
-    <nav className={`menu-bar ${className}`}>
+    <nav className={`${styles.menuBar} ${className}`}>
 
-      <div className="menu-container">
+      <div className={styles.menuContainer}>
         {/* Center section with menu items */}
-        <div className="menu-center">
+        <div className={styles.menuCenter}>
           {/* Desktop Menu */}
-          <div className="menu-items">
+          <div className={styles.menuItems}>
             {items.map((item) => renderMenuItem(item))}
           </div>
         </div>
 
         {/* Right section with theme button and mobile menu */}
-        <div className="right-section">
+        <div className={styles.rightSection}>
           {/* Theme Button */}
           {themeButton && (
-            <div className="theme-button-container">
+            <div className={styles.themeButtonContainer}>
               <GenericButton
                 label={themeButton.label}
                 onClick={themeButton.onClick}
-                className="theme-button"
+                className={styles.themeButton}
                 />
             </div>
           )}
 
           {/* Mobile menu button */}
           <button
-            className={`mobile-menu-button ${mobileMenuOpen ? 'open' : ''}`}
+            className={`${styles.mobileMenuButton} ${mobileMenuOpen ? styles.open : ''}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            <div className="hamburger-line"></div>
-            <div className="hamburger-line"></div>
-            <div className="hamburger-line"></div>
+            <div className={styles.hamburgerLine}></div>
+            <div className={styles.hamburgerLine}></div>
+            <div className={styles.hamburgerLine}></div>
           </button>
         </div>
 
         {/* Mobile Menu */}
-        <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
+        <div className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.open : ''}`}>
           {items.map((item) => renderMenuItem(item, true))}
         </div>
       </div>
