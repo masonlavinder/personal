@@ -35,7 +35,7 @@ class BlogService {
 
       for (const filename of postFiles) {
         try {
-          const response = await fetch(`/personal/posts/${filename}`);
+          const response = await fetch(`/lavinder/posts/${filename}`);
           if (!response.ok) continue;
           
           const markdownContent = await response.text();

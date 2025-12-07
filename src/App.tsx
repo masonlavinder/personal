@@ -13,17 +13,17 @@ const App: React.FC = () => {
     <Router>
         <MenuBar
           items={[
-            { id: 'home', label: 'home', href: '/personal/' },
-            { id: 'blog', label: 'blog', href: '/personal/blog' },
+            { id: 'home', label: 'home', href: '/lavinder/' },
+            { id: 'blog', label: 'blog', href: '/lavinder/blog' },
           ]}
         />
         <Routes>
-            <Route path="/personal/" element={<Home />} />
-            <Route path="/personal/home" element={<Home />} />
-            <Route path="/personal/blog" element={<Blog />} />
-            <Route path="/personal/blog/:slug" element={<Post />} />
-            <Route path="/personal/not-found" element={<NotFound />} />
-            <Route path="/personal/*" element={<Home />} />
+            <Route path="/lavinder/" element={<Home />} />
+            <Route path="/lavinder/home" element={<Home />} />
+            <Route path="/lavinder/blog" element={<Blog />} />
+            <Route path="/lavinder/blog/:slug" element={<Post />} />
+            <Route path="/lavinder/not-found" element={<NotFound />} />
+            <Route path="/lavinder/*" element={<Home />} />
         </Routes>
     </Router>
     </>

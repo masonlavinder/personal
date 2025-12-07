@@ -54,7 +54,7 @@ const Home: React.FC = () => {
                             <ul className={styles.recentPostList}>
                                 {recentPosts.map((post) => (
                                     <li key={post.id} className={styles.recentPostItem}>
-                                        <Link to={`/personal/blog/${post.slug}`} className={styles.recentPostLink}>
+                                        <Link to={`/lavinder/blog/${post.slug}`} className={styles.recentPostLink}>
                                             <h3 className={styles.recentPostTitle}>{post.title}</h3>
                                             <p className={styles.recentPostDate}>{post.publishDate}</p>
                                         </Link>
