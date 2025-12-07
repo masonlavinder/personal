@@ -55,6 +55,7 @@ export const Blog: React.FC = () => {
       <li key={post.id} className={styles.postItem}>
         <Link to={`/lavinder/blog/${post.slug}`} className={styles.postLink}>
           <h2 className={styles.postTitle}>{post.title}</h2>
+          <p className={styles.postExcerpt}>{post.excerpt}</p>
           <p className={styles.postDate}>{post.publishDate}</p>
         </Link>
       </li>
