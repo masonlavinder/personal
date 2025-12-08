@@ -67,7 +67,6 @@ const BlogPostDisplay: React.FC<BlogPostDisplayProps> = ({ post }) => {
               </div>
             </div>
           </header>
-
           <MarkdownRenderer content={post.content} />
         </article>
       </div>

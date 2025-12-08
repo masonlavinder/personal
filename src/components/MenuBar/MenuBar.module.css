@@ -57,12 +57,12 @@
 }
 
 .menuButton:hover:not(.disabled) {
-    background-color: var(--blue-primary);
-    color: var(--white);
+    background-color: var(--secondary-color);
+    color: var(--vanilla);
 }
 
 .menuButton.disabled {
-    color: var(--gray-400);
+    color: var(--primary-color);
     cursor: not-allowed;
 }
 
@@ -80,7 +80,7 @@
     top: 100%;
     left: 0;
     min-width: 200px;
-    background: var(--white);
+    background: var(--vanilla);
     border: none;
     border-radius: 6px;
     box-shadow: var(--shadow-md);
@@ -116,11 +116,11 @@
 }
 
 .dropdownItem:hover:not(.disabled) {
-    background-color: var(--gray-100);
+    background-color: var(--accent-color);
 }
 
 .dropdownItem.disabled {
-    color: var(--gray-400);
+    color: var(--primary-color);
     cursor: not-allowed;
 }
 
@@ -141,15 +141,15 @@
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
-    background-color: rgba(226, 232, 240, 0.8);
+    background-color: var(--background-color-transparent);
     backdrop-filter: blur(10px);
     border-radius: 6px;
     font-family: "Libertinus Math";
 }
 
 .themeButton:hover {
-    background-color: var(--blue-primary);
-    color: var(--white);
+    background-color: var(--primary-color);
+    color: var(--vanilla);
 }
 
 .mobileMenuButton {
@@ -169,7 +169,7 @@
     width: 100%;
     height: 2px;
     transition: all 0.3s ease;
-    background-color: var(--gray-900);
+    background-color: var(--text-dark);
 }
 
 .mobileMenuButton.open .hamburgerLine:nth-child(1) {
@@ -190,7 +190,7 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--white);
+    background: var(--vanilla);
     border: none;
     box-shadow: var(--shadow-md);
     padding: 16px 20px;
@@ -219,7 +219,7 @@
     width: 100%;
     box-shadow: none;
     border: none;
-    background: var(--gray-50);
+    background: var(--vanilla);
     margin-top: 8px;
     border-radius: 4px;
     animation: none;

@@ -12,26 +12,27 @@
 
 .backLink {
     text-decoration: none;
-    color: var(--blue-600);
+    color: var(--primary-color);
     font-weight: 500;
     transition: color 0.2s ease;
 }
 
 .backLink:hover {
-    color: var(--blue-700);
+    color: var(--text-dark);
 }
 
 .article {
-    background-color: var(--white);
+    background-color: var(--vanilla);
     border-radius: 8px;
     overflow: hidden;
     margin-inline: 100px;
+    margin-bottom: 50px;
 }
 
 .header {
-    background-color: var(--blue-primary);
     padding: 1.5rem;
     margin-bottom: 0;
+    border-radius: 8px 8px 0 0;
 }
 
 .metadata {
@@ -39,13 +40,13 @@
     align-items: center;
     gap: 0.5rem;
     font-size: 0.875rem;
-    color: var(--white);
+    color: var(--text-dark);
     margin-bottom: 1rem;
 }
 
 .featuredBadge {
-    background-color: var(--green-primary);
-    color: var(--white);
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
     font-size: 0.75rem;
@@ -53,22 +54,22 @@
 }
 
 .publishDate {
-    color: var(--white);
+    color: var(--text-dark);
 }
 
 .separator {
-    color: var(--white);
+    color: var(--text-dark);
 }
 
 .readingTime {
-    color: var(--white);
+    color: var(--text-dark);
 }
 
 .title {
     font-size: 2.25rem;
     font-weight: bold;
     margin: 0 0 1.5rem;
-    color: var(--white);
+    color: var(--text-dark);
     line-height: 1.2;
 }
 
@@ -82,7 +83,7 @@
 
 .author {
     font-size: 0.875rem;
-    color: var(--white);
+    color: var(--text-dark);
 }
 
 .tags {
@@ -92,8 +93,8 @@
 }
 
 .tag {
-    background-color: var(--white);
-    color: var(--blue-primary);
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
     font-size: 0.75rem;
@@ -102,8 +103,9 @@
 
 .content {
     line-height: 1.75;
-    color: var(--gray-700);
+    color: var(--text-dark);
     margin-inline: 100px;
+    border-radius: 0 0 8px 8px;
 }
 
 /* Markdown content styling */
@@ -112,7 +114,7 @@
     font-weight: bold;
     margin-bottom: 1.5rem;
     margin-top: 2rem;
-    color: var(--blue-primary);
+    color: var(--primary-color);
 }
 
 .content h2 {
@@ -120,7 +122,7 @@
     font-weight: 600;
     margin-bottom: 1rem;
     margin-top: 1.5rem;
-    color: var(--blue-primary);
+    color: var(--primary-color);
 }
 
 .content h3 {
@@ -128,18 +130,18 @@
     font-weight: 600;
     margin-bottom: 0.75rem;
     margin-top: 1.25rem;
-    color: var(--green-primary);
+    color: var(--secondary-color);
 }
 
 .content p {
     margin-bottom: 1rem;
-    color: var(--gray-700);
+    color: var(--text-dark);
     line-height: 1.625;
 }
 
 .content code {
-    background-color: var(--gray-100);
-    color: var(--blue-primary);
+    background-color: var(--accent-color);
+    color: var(--primary-color);
     padding: 0.125rem 0.25rem;
     border-radius: 0.25rem;
     font-size: 0.875rem;
@@ -147,20 +149,20 @@
 }
 
 .content pre {
-    background-color: var(--gray-100);
+    background-color: var(--accent-color);
     padding: 1rem;
     border-radius: 0.5rem;
     overflow-x: auto;
     margin-bottom: 1rem;
-    border-left: 3px solid var(--blue-primary);
+    border-left: 3px solid var(--primary-color);
 }
 
 .content blockquote {
-    border-left: 4px solid var(--green-primary);
+    border-left: 4px solid var(--secondary-color);
     padding: 1rem;
     font-style: italic;
-    color: var(--gray-700);
-    background-color: var(--gray-100);
+    color: var(--text-dark);
+    background-color: var(--accent-color);
     border-radius: 8px;
     margin: 1rem 0;
 }
@@ -169,24 +171,24 @@
     list-style: disc;
     padding-left: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--gray-700);
+    color: var(--text-dark);
 }
 
 .content ol {
     list-style: decimal;
     padding-left: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--gray-700);
+    color: var(--text-dark);
 }
 
 .content a {
-    color: var(--blue-primary);
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: 500;
-    border-bottom: 2px solid var(--green-primary);
+    border-bottom: 2px solid var(--secondary-color);
 }
 
 .content a:hover {
-    color: var(--green-primary);
-    border-bottom-color: var(--blue-primary);
+    color: var(--secondary-color);
+    border-bottom-color: var(--primary-color);
 }

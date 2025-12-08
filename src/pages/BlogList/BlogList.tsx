@@ -42,7 +42,7 @@ export const Blog: React.FC = () => {
 
     return (
       <div className={styles.mainWrapper}>
-          <h1>the blog list</h1>
+          <h1 className={styles.blogListTitle}>the blog list</h1>
           <input
             type="text"
             placeholder="search posts..."
