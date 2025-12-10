@@ -10,7 +10,7 @@
 .menuContainer {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 10px;
+    padding: var(--spacing-xl) var(--spacing-smd);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,12 +26,12 @@
 .menuItems {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: var(--spacing-smd);
     justify-content: center;
     background-color: var(--background-color-transparent);
     backdrop-filter: blur(10px);
     border-radius: 6px;
-    padding: 5px;
+    padding: var(--spacing-sm);
 }
 
 .menuItem {
@@ -41,12 +41,12 @@
 .menuButton {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 10px;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-smd) var(--spacing-smd);
     background: none;
     border: none;
-    font-size: 28px;
-    font-weight: 500;
+    font-size: var(--font-3xl);
+    font-weight: var(--font-weight-semibold);
     cursor: pointer;
     transition: all 0.2s ease;
     border-radius: 6px;
@@ -67,7 +67,7 @@
 }
 
 .dropdownArrow {
-    font-size: 10px;
+    font-size: var(--font-2xs);
     transition: transform 0.2s ease;
 }
 
@@ -84,7 +84,7 @@
     border: none;
     border-radius: 6px;
     box-shadow: var(--shadow-md);
-    padding: 8px 0;
+    padding: var(--spacing-sm) 0;
     z-index: 1001;
     animation: slideDown 0.2s ease;
 }
@@ -103,11 +103,11 @@
 .dropdownItem {
     display: block;
     width: 100%;
-    padding: 10px 16px;
+    padding: var(--spacing-smd) var(--spacing-lg);
     background: null;
     border: none;
     text-align: left;
-    font-size: 14px;
+    font-size: var(--font-sm);
     cursor: pointer;
     font-family: "Libertinus Math";
     transition: background-color 0.2s ease;
@@ -127,7 +127,7 @@
 .rightSection {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: var(--spacing-lg);
     margin-left: auto;
 }
 
@@ -138,9 +138,9 @@
 }
 
 .themeButton {
-    padding: 10px 20px;
+    padding: var(--spacing-smd) var(--spacing-xl);
     cursor: pointer;
-    font-size: 16px;
+    font-size: var(--font-base);
     background-color: var(--background-color-transparent);
     backdrop-filter: blur(10px);
     border-radius: 6px;
@@ -193,7 +193,7 @@
     background: var(--vanilla);
     border: none;
     box-shadow: var(--shadow-md);
-    padding: 16px 20px;
+    padding: var(--spacing-lg) var(--spacing-xl);
     animation: slideDown 0.3s ease;
 }
 
@@ -203,13 +203,13 @@
 
 .mobileMenuItem {
     width: 100%;
-    margin-bottom: 8px;
+    margin-bottom: var(--spacing-sm);
 }
 
 .mobileMenuItem .menuButton {
     width: 100%;
     justify-content: space-between;
-    padding: 12px 0;
+    padding: var(--spacing-md) 0;
     border: none;
     font-family: "Libertinus Math";
 }
@@ -220,13 +220,13 @@
     box-shadow: none;
     border: none;
     background: var(--vanilla);
-    margin-top: 8px;
+    margin-top: var(--spacing-sm);
     border-radius: 4px;
     animation: none;
 }
 
 .mobileDropdown .dropdownItem {
-    padding: 8px 16px;
+    padding: var(--spacing-sm) var(--spacing-lg);
     border: none;
 }
 

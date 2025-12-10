@@ -5,6 +5,7 @@ import Home from './pages/Home/Home';
 import Post from './pages/Post/Post';
 import NotFound from './pages/NotFound';
 import Blog from './pages/BlogList/BlogList';
+import LinkList from './pages/LinkList/LinkList'
 import MenuBar from './components/MenuBar/MenuBar';
 
 const App: React.FC = () => {
@@ -15,6 +16,7 @@ const App: React.FC = () => {
           items={[
             { id: 'home', label: 'home', href: '/lavinder/' },
             { id: 'blog', label: 'blog', href: '/lavinder/blog' },
+            { id: 'link-list', label: 'link list', href: '/lavinder/link-list '},
           ]}
         />
         <Routes>
@@ -22,6 +24,7 @@ const App: React.FC = () => {
             <Route path="/lavinder/home" element={<Home />} />
             <Route path="/lavinder/blog" element={<Blog />} />
             <Route path="/lavinder/blog/:slug" element={<Post />} />
+            <Route path="/lavinder/link-list" element={<LinkList />} />
             <Route path="/lavinder/not-found" element={<NotFound />} />
             <Route path="/lavinder/*" element={<Home />} />
         </Routes>

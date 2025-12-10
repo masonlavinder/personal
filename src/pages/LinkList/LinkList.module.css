@@ -1,0 +1,102 @@
+/* LinkList.module.css */
+.mainWrapper {
+  margin-inline: 100px;
+}
+
+.linkListTitle {
+  color: var(--text-light);
+}
+
+.searchInput {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-base);
+  border: 5px solid var(--primary-color);
+  border-radius: 8px;
+  background-color: var(--vanilla);
+  color: var(--text-dark);
+  font-family: sans-serif;
+  transition: all 0.2s ease;
+  margin-bottom: var(--spacing-xl);
+  box-sizing: border-box;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(221, 96, 49, 0.1);
+}
+
+.searchInput::placeholder {
+  color: var(--text-medium);
+}
+
+.linkList {
+  list-style: none;
+  padding: var(--spacing-lg);
+  margin: 0;
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.linkItem {
+  padding: var(--spacing-lg);
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  background-color: var(--vanilla);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 2px solid var(--accent-color);
+}
+
+.linkItem:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+}
+
+.linkItemLink {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.linkTitle {
+  margin: 0 0 var(--spacing-sm);
+  font-size: var(--font-xl);
+  color: var(--text-dark);
+  font-weight: var(--font-weight-bold);
+}
+
+.linkUrl {
+  margin: 0 0 var(--spacing-sm);
+  font-size: var(--font-xs);
+  color: var(--text-medium);
+  font-style: italic;
+  word-break: break-all;
+}
+
+.linkDescription {
+  margin: 0 0 var(--spacing-sm);
+  font-size: var(--font-sm);
+  color: var(--text-dark);
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.linkCategory {
+  display: inline-block;
+  font-size: var(--font-xs);
+  color: var(--text-light);
+  background-color: var(--primary-color);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 4px;
+  align-self: flex-start;
+}

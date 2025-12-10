@@ -36,12 +36,14 @@ const Home: React.FC = () => {
                     </div>
                     <div className={styles.contentBubble}>
                         <h1>about me</h1>
-                        <p>Hey, welcome to my website.  I appreciate you taking a gander.  Hopefully you find it unique (or at least not bad).  I am an engineer focusing on AI and analytics deployement.  I love to run, fish, and touch grass (though clearly a computer guy). </p>
+                        <p>Welcome to my website.  My name is Mason and I am a full stack developer focusing on full stack AI applications.  I originally majored in Aerospace Engineering at Virginia Tech, but got intrested in data science in some of my internships and first job.  I eventually went back to school at night and got my Master's in Data Analytics Engineering in George Mason where I studied data engineering, analytics, and artificial intelligence.  I am currently working on a full stack AI project. </p>
                     </div>
                     <div className={styles.contentBubble}>
                         <h1>my tastes</h1>
                         <h3> Computer </h3>
-                        <p> Apple over everything, current have a Mac Pro (intel based) and an first gen iMac.</p>
+                        <p> I am a big Apple guy. BUT I also have learned the ways of Ubuntu. I have a mediocre work-issued Dell with Ubuntu and an M1 iMac at home.</p>
+                        <h3> Keyboard </h3>
+                        <p> I never thought I would be a keyboard guy.  But I know have a Keychron Q1 Max with Gateron Jupiter Red's for daily use and a NuPhy Air60 V2 for travel. </p> 
                         </div>
                 </div>
                 <div className={`${styles.contentRight} ${styles.contentColumn}`}>

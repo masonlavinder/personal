@@ -1,7 +1,7 @@
 .mainWrapper {
     display:flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: var(--spacing-lg);
     margin-inline: 100px;
 }
 
@@ -33,9 +33,9 @@
 }
 
 .themeButton {
-    padding: 10px 20px;
+    padding: var(--spacing-smd) var(--spacing-xl);
     cursor: pointer;
-    font-size: 16px;
+    font-size: var(--font-base);
     background-color: none;
     background: none;
     font-family: "Libertinus Math";
@@ -56,7 +56,7 @@
 
   .menuContainer {
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 var(--spacing-xl);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -76,12 +76,12 @@
   .menuButton {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 12px 16px;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-lg);
     background: none;
     border: none;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: var(--font-sm);
+    font-weight: var(--font-weight-semibold);
     cursor: pointer;
     transition: all 0.2s ease;
     border-radius: 4px;
@@ -100,7 +100,7 @@
   }
 
   .dropdownArrow {
-    font-size: 10px;
+    font-size: var(--font-2xs);
     transition: transform 0.2s ease;
   }
 
@@ -117,7 +117,7 @@
     border: 1px solid var(--accent-color);
     border-radius: 6px;
     box-shadow: var(--shadow-md);
-    padding: 8px 0;
+    padding: var(--spacing-sm) 0;
     z-index: 1001;
     animation: slideDown 0.2s ease;
   }
@@ -136,11 +136,11 @@
   .dropdownItem {
     display: block;
     width: 100%;
-    padding: 10px 16px;
+    padding: var(--spacing-smd) var(--spacing-lg);
     background: null;
     border: none;
     text-align: left;
-    font-size: 14px;
+    font-size: var(--font-sm);
     cursor: pointer;
     font-family: "Libertinus Math";
     transition: background-color 0.2s ease;
@@ -196,7 +196,7 @@
     background: var(--vanilla);
     border-top: 1px solid var(--accent-color);
     box-shadow: var(--shadow-md);
-    padding: 16px 20px;
+    padding: var(--spacing-md);
     animation: slideDown 0.3s ease;
   }
 
@@ -206,13 +206,13 @@
 
   .mobileMenuItem {
     width: 100%;
-    margin-bottom: 8px;
+    margin-bottom: var(--spacing-sm);
   }
 
   .mobileMenuItem .menuButton {
     width: 100%;
     justify-content: space-between;
-    padding: 12px 0;
+    padding: var(--spacing-md) 0;
     border-bottom: 1px solid var(--accent-color);
     font-family: "Libertinus Math";
   }
@@ -223,13 +223,13 @@
     box-shadow: none;
     border: none;
     background: var(--vanilla);
-    margin-top: 8px;
+    margin-top: var(--spacing-sm);
     border-radius: 4px;
     animation: none;
   }
 
   .mobileDropdown .dropdownItem {
-    padding: 8px 16px;
+    padding: var(--spacing-sm) var(--spacing-lg);
     border-bottom: 1px solid var(--accent-color);
   }
 
@@ -253,7 +253,7 @@
   .rightSection {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: var(--spacing-lg);
     margin-left: auto;
   }
 
@@ -261,7 +261,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: var(--spacing-lg);
     width: 100%;
   }
 
@@ -269,7 +269,7 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: var(--spacing-lg);
     width: 100%;
   }
 
@@ -282,14 +282,14 @@
 
   .contentLeft {
     flex: 2;
-    padding: 1rem;
+    padding: var(--spacing-lg);
     background-color: var(--secondary-color);
     border-radius: 8px;
   }
 
     .contentRight {
         flex: 1;
-        padding: 1rem;
+        padding: var(--spacing-lg);
         background-color: var(--secondary-color);
         border-radius: 8px;
     }
@@ -298,23 +298,23 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        gap: 1rem;
+        gap: var(--spacing-lg);
     }
 
     .contentBubble {
         background-color: var(--accent-color);
-        padding: 1rem;
+        padding: var(--spacing-lg);
         border-radius: 8px;
         box-shadow: var(--shadow-sm);
     }
 
     .genericButton {
-        padding: 10px 20px;
+        padding: var(--spacing-smd) var(--spacing-xl);
         color: var(--vanilla);
         border: none;
         border-radius: 4px;
         cursor: pointer;
-        font-size: 16px;
+        font-size: var(--font-base);
     }
 
     .genericButton.hover{
@@ -323,7 +323,7 @@
     }
 
     .content {
-        padding: 1rem;
+        padding: var(--spacing-lg);
         width: 100%;
     }
 
@@ -334,10 +334,10 @@
     }
 
     .recentPostItem {
-        margin-bottom: 0.75rem;
+        margin-bottom: var(--spacing-md);
         background-color: var(--secondary-color);
         border-radius: 8px;
-        padding: 0.75rem;
+        padding: var(--spacing-md);
         transition: all 0.2s ease;
     }
 
@@ -357,15 +357,15 @@
     }
 
     .recentPostTitle {
-        margin: 0 0 0.25rem 0;
-        font-size: 1rem;
+        margin: 0 0 var(--spacing-xs) 0;
+        font-size: var(--font-base);
         color: var(--text-dark);
-        font-weight: 600;
+        font-weight: var(--font-weight-bold);
     }
 
     .recentPostDate {
         margin: 0;
-        font-size: 0.875rem;
+        font-size: var(--font-sm);
         color: var(--text-dark);
         opacity: 0.9;
     }
@@ -377,18 +377,18 @@
     .socialLinksContainer {
         display: flex;
         flex-direction: row;
-        gap: 1rem;
+        gap: var(--spacing-lg);
     }
 
     .linkedinLink {
         display: inline-block;
-        padding: 12px 24px;
+        padding: var(--spacing-md) var(--spacing-2xl);
         background-color: var(--secondary-color);
         color: var(--text-dark);
         text-decoration: none;
         border-radius: 8px;
-        font-weight: 600;
-        font-size: 1rem;
+        font-weight: var(--font-weight-bold);
+        font-size: var(--font-base);
         transition: all 0.2s ease;
         box-shadow: var(--shadow-sm);
     }
