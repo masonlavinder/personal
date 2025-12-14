@@ -4,7 +4,7 @@ title: "How I Made This Site"
 slug: "site"
 author: "Mason Lavinder"
 publishDate: "2025-12-14"
-tags: ["react", "typescript", "web-development"]
+tags: ["react", "typescript", "development"]
 featured: true
 excerpt: "Building a personal site with GitHub Pages, React, and a back-to-basics philosophy"
 ---
