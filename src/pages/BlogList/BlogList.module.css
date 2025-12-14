@@ -50,7 +50,7 @@
   .tagButton:hover {
     background-color: var(--secondary-hover);
     color: var(--text-light);
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
   .tagButtonActive {
