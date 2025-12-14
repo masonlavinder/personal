@@ -267,10 +267,12 @@
 
   .contentVerticalSplit {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-sm);
     width: 100%;
+    align-items: top;
+    justify-content: start;
   }
 
   /* Media query for small screens */
@@ -303,7 +305,7 @@
 
     .contentBubble {
         background-color: var(--accent-color);
-        padding: var(--spacing-lg);
+        padding: var(--spacing-xl);
         border-radius: 8px;
         box-shadow: var(--shadow-sm);
     }
@@ -397,4 +399,15 @@
         opacity: 0.9;
         transform: translateY(-2px);
         box-shadow: var(--shadow-md);
+    }
+
+    .nameContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nameText {
+        margin: 0;
+        line-height: 1;
+        padding: 0;
     }

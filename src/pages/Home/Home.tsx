@@ -28,8 +28,9 @@ const Home: React.FC = () => {
                 <div className={`${styles.contentLeft} ${styles.contentColumn}`}>
                     <div className={styles.contentBubble}>
                         <div className={styles.contentVerticalSplit}>
-                            <div>
-                                <h1>mason lavinder</h1>
+                            <div className={styles.nameContainer}>
+                                <h1 className={styles.nameText}>mason</h1>
+                                <h1 className={styles.nameText}>lavinder</h1>
                             </div>
                             <div>{returnComputerImage()}</div>
                         </div>
