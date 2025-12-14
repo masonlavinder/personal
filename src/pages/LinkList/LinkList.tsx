@@ -1,118 +1,52 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from '../../types/link';
 import styles from './LinkList.module.css';
+import { sampleLinks } from './linksData';
 
 export const LinkList: React.FC = () => {
   const [links, setLinks] = useState<Link[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredLinks, setFilteredLinks] = useState<Link[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   useEffect(() => {
-    // Sample links data - you can replace this with an API call or service
-    const sampleLinks: Link[] = [
-      {
-        id: '1',
-        title: 'React Documentation',
-        url: 'https://react.dev',
-        description: 'The official React documentation is incredibly well-written and helpful for understanding modern React patterns and best practices.',
-        category: 'Development'
-      },
-      {
-        id: '2',
-        title: 'TypeScript Handbook',
-        url: 'https://www.typescriptlang.org/docs/',
-        description: 'Comprehensive guide to TypeScript that has helped me write better typed code and catch bugs early.',
-        category: 'Development'
-      },
-      {
-        id: '3',
-        title: 'CSS-Tricks',
-        url: 'https://css-tricks.com',
-        description: 'Great resource for CSS tips, tricks, and modern layout techniques. Their flexbox and grid guides are especially useful.',
-        category: 'Design'
-      },
-      {
-        id: '4',
-        title: 'MDN Web Docs',
-        url: 'https://developer.mozilla.org',
-        description: 'The most comprehensive web development documentation. Essential reference for HTML, CSS, JavaScript, and web APIs.',
-        category: 'Development'
-      },
-      {
-        id: '5',
-        title: 'Can I Use',
-        url: 'https://caniuse.com',
-        description: 'Check browser compatibility for any CSS, JavaScript, or HTML feature. Invaluable for cross-browser development.',
-        category: 'Tools'
-      },
-      {
-        id: '6',
-        title: 'GitHub',
-        url: 'https://github.com',
-        description: 'The world\'s largest code hosting platform. Great for discovering open source projects and collaborating with others.',
-        category: 'Tools'
-      },
-      {
-        id: '7',
-        title: 'Stack Overflow',
-        url: 'https://stackoverflow.com',
-        description: 'The go-to Q&A site for developers. Countless solutions to common and uncommon programming problems.',
-        category: 'Community'
-      },
-      {
-        id: '8',
-        title: 'Figma',
-        url: 'https://figma.com',
-        description: 'Collaborative design tool that has revolutionized how designers and developers work together on UI/UX.',
-        category: 'Design'
-      },
-      {
-        id: '9',
-        title: 'Vercel',
-        url: 'https://vercel.com',
-        description: 'Easy deployment platform for frontend projects. Deploy with a single command and get instant previews for pull requests.',
-        category: 'Deployment'
-      },
-      {
-        id: '10',
-        title: 'DevDocs',
-        url: 'https://devdocs.io',
-        description: 'Fast, searchable documentation browser combining multiple API docs in one interface. Works offline too.',
-        category: 'Tools'
-      },
-      {
-        id: '11',
-        title: 'Web.dev',
-        url: 'https://web.dev',
-        description: 'Google\'s resource for modern web development best practices, performance optimization, and accessibility.',
-        category: 'Learning'
-      },
-      {
-        id: '12',
-        title: 'Frontend Mentor',
-        url: 'https://www.frontendmentor.io',
-        description: 'Real-world frontend challenges to practice your skills and build your portfolio with professional designs.',
-        category: 'Learning'
-      }
-    ];
-
     setLinks(sampleLinks);
     setFilteredLinks(sampleLinks);
   }, []);
 
+  // Get unique categories from all links
+  const allCategories = Array.from(
+    new Set(
+      sampleLinks.flatMap(link => link.categories || [])
+    )
+  ).sort();
+
   useEffect(() => {
-    if (searchQuery.trim() === '') {
-      setFilteredLinks(links);
-    } else {
+    let filtered = links;
+
+    // Filter by category
+    if (selectedCategory) {
+      filtered = filtered.filter(link =>
+        link.categories && link.categories.includes(selectedCategory)
+      );
+    }
+
+    // Filter by search query
+    if (searchQuery.trim() !== '') {
       const query = searchQuery.toLowerCase();
-      const filtered = links.filter(link =>
+      filtered = filtered.filter(link =>
         link.title.toLowerCase().includes(query) ||
         link.description.toLowerCase().includes(query) ||
-        (link.category && link.category.toLowerCase().includes(query))
+        (link.categories && link.categories.some(cat => cat.toLowerCase().includes(query)))
       );
-      setFilteredLinks(filtered);
     }
-  }, [searchQuery, links]);
+
+    setFilteredLinks(filtered);
+  }, [searchQuery, links, selectedCategory]);
+
+  const handleCategoryClick = (category: string) => {
+    setSelectedCategory(selectedCategory === category ? null : category);
+  };
 
   return (
     <div className={styles.mainWrapper}>
@@ -124,6 +58,17 @@ export const LinkList: React.FC = () => {
         onChange={(e) => setSearchQuery(e.target.value)}
         className={styles.searchInput}
       />
+      <div className={styles.categoryFilters}>
+        {allCategories.map(category => (
+          <button
+            key={category}
+            onClick={() => handleCategoryClick(category)}
+            className={`${styles.categoryButton} ${selectedCategory === category ? styles.categoryButtonActive : ''}`}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
       <ul className={styles.linkList}>
         {filteredLinks.map((link) => (
           <li key={link.id} className={styles.linkItem}>
@@ -136,8 +81,12 @@ export const LinkList: React.FC = () => {
               <h3 className={styles.linkTitle}>{link.title}</h3>
               <p className={styles.linkUrl}>{link.url}</p>
               <p className={styles.linkDescription}>{link.description}</p>
-              {link.category && (
-                <span className={styles.linkCategory}>{link.category}</span>
+              {link.categories && link.categories.length > 0 && (
+                <div className={styles.linkCategories}>
+                  {link.categories.map((category, index) => (
+                    <span key={index} className={styles.linkCategory}>{category}</span>
+                  ))}
+                </div>
               )}
             </a>
           </li>

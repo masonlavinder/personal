@@ -4,6 +4,7 @@
     --olive: rgb(81, 91, 58);
 
     --orange: #DD6031;
+    --darker-orange: #dd5f31e1;
     --brown: #311E10;
     --vanilla: #F2EDCF;
     --black: #1A1410;
@@ -12,6 +13,7 @@
     /* Semantic Colors - Primary Palette */
     --primary-color: var(--olive);
     --secondary-color: var(--orange);
+    --secondary-hover: var(--darker-orange);
     --tertiary-color: var(--brown);
     --accent-color: var(--vanilla);
     --background-color: var(--olive);

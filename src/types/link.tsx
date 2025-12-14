@@ -4,5 +4,5 @@ export interface Link {
   title: string;
   url: string;
   description: string;
-  category?: string;
+  categories?: string[];
 }

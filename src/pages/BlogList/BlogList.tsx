@@ -10,6 +10,7 @@ export const Blog: React.FC = () => {
     const [posts, setPosts] = useState<BlogPostSummary[]>([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredPosts, setFilteredPosts] = useState<BlogPostSummary[]>([]);
+    const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -25,19 +26,39 @@ export const Blog: React.FC = () => {
         fetchPosts();
       }, []);
 
+    // Get unique tags from all posts
+    const allTags = Array.from(
+        new Set(
+            posts.flatMap(post => post.tags || [])
+        )
+    ).sort();
+
     useEffect(() => {
-        if (searchQuery.trim() === '') {
-            setFilteredPosts(posts);
-        } else {
+        let filtered = posts;
+
+        // Filter by tag
+        if (selectedTag) {
+            filtered = filtered.filter(post =>
+                post.tags && post.tags.includes(selectedTag)
+            );
+        }
+
+        // Filter by search query
+        if (searchQuery.trim() !== '') {
             const query = searchQuery.toLowerCase();
-            const filtered = posts.filter(post =>
+            filtered = filtered.filter(post =>
                 post.title.toLowerCase().includes(query) ||
                 post.excerpt.toLowerCase().includes(query) ||
                 post.tags.some(tag => tag.toLowerCase().includes(query))
             );
-            setFilteredPosts(filtered);
         }
-    }, [searchQuery, posts]);
+
+        setFilteredPosts(filtered);
+    }, [searchQuery, posts, selectedTag]);
+
+    const handleTagClick = (tag: string) => {
+        setSelectedTag(selectedTag === tag ? null : tag);
+    };
 
 
     return (
@@ -50,6 +71,17 @@ export const Blog: React.FC = () => {
             onChange={(e) => setSearchQuery(e.target.value)}
             className={styles.searchInput}
           />
+          <div className={styles.tagFilters}>
+            {allTags.map(tag => (
+              <button
+                key={tag}
+                onClick={() => handleTagClick(tag)}
+                className={`${styles.tagButton} ${selectedTag === tag ? styles.tagButtonActive : ''}`}
+              >
+                {tag}
+              </button>
+            ))}
+          </div>
           <ul className={styles.postList}>
     {filteredPosts.map((post) => (
       <li key={post.id} className={styles.postItem}>
