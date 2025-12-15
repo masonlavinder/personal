@@ -35,7 +35,7 @@ class BlogService {
 
       for (const filename of postFiles) {
         try {
-          const url = `/lavinder/posts/${filename}`;
+          const url = `${import.meta.env.BASE_URL}posts/${filename}`;
           console.log(`Fetching post from: ${url}`);
           const response = await fetch(url);
 
