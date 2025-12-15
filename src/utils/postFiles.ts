@@ -1,13 +1,10 @@
 // config/posts-config.ts
-// Use Vite's glob import to automatically discover all markdown files in public/posts/
-// This is evaluated at build time, so new posts are automatically included
-const postModules = import.meta.glob('/public/posts/*.md', { eager: false });
-
-// Extract filenames from the glob import paths
-export const postFiles = Object.keys(postModules).map(path => {
-  // Convert '/public/posts/post-1.md' to 'post-1.md'
-  return path.replace('/public/posts/', '');
-});
+// List of post files - add new posts here
+// TODO: This could be automated with a build script if needed
+export const postFiles = [
+    'post-1.md',
+    'post-2.md',
+];
 
 // Helper to get slug from filename
 export const getSlugFromFilename = (filename: string): string => {

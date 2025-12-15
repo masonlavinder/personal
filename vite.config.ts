@@ -5,4 +5,5 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   plugins: [react()],
   base: '/lavinder/',  // <-- IMPORTANT: your repo name here
+  assetsInclude: ['**/*.md'],  // Treat markdown files as assets, not JS modules
 })
