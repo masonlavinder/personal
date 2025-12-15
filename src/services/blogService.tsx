@@ -35,12 +35,18 @@ class BlogService {
 
       for (const filename of postFiles) {
         try {
-          const response = await fetch(`/lavinder/posts/${filename}`);
-          if (!response.ok) continue;
-          
+          const url = `/lavinder/posts/${filename}`;
+          console.log(`Fetching post from: ${url}`);
+          const response = await fetch(url);
+
+          if (!response.ok) {
+            console.error(`Failed to fetch ${filename}: ${response.status} ${response.statusText}`);
+            continue;
+          }
+
           const markdownContent = await response.text();
           const { data, content } = matter(markdownContent);
-          
+
           const frontmatter = data as BlogPostFrontmatter;
           const readingTime = this.calculateReadingTime(content);
 
@@ -50,8 +56,9 @@ class BlogService {
             readingTime,
             filename
           });
+          console.log(`Successfully loaded post: ${frontmatter.title}`);
         } catch (error) {
-          console.warn(`Failed to load post ${filename}:`, error);
+          console.error(`Failed to load post ${filename}:`, error);
         }
       }
 
