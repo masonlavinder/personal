@@ -35,7 +35,9 @@ class BlogService {
 
       for (const filename of postFiles) {
         try {
-          const url = `${import.meta.env.BASE_URL}posts/${filename}`;
+          // Remove .md extension for GitHub Pages compatibility
+          const fileNameWithoutExt = filename.replace(/\.md$/, '');
+          const url = `${import.meta.env.BASE_URL}posts/${fileNameWithoutExt}`;
           console.log(`Fetching post from: ${url}`);
           const response = await fetch(url);
 
