@@ -1,6 +1,6 @@
 export const returnComputerImage = () => {
     return (
-      <pre>
+      <pre style={{ fontSize: 'clamp(0.3rem, 1.5vw, 1rem)', overflow: 'auto', maxWidth: '100%' }}>
   {`                                          ___________________
                                          /__________________/|    
                                          | ________________ || 

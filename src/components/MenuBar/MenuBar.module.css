@@ -89,6 +89,13 @@
     animation: slideDown 0.2s ease;
 }
 
+@media (max-width: 768px) {
+    .dropdownMenu {
+        min-width: 150px;
+        max-width: 90vw;
+    }
+}
+
 @keyframes slideDown {
     from {
         opacity: 0;

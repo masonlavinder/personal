@@ -56,8 +56,28 @@
   --font-weight-bold: 700;
 }
 
+html {
+    width: 100%;
+}
+
 body {
     background-color: var(--background-color);
     margin: 0;
     padding: 0;
+    width: 100%;
+    min-width: 320px;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#root {
+    width: 100%;
+    max-width: 100%;
 }

@@ -86,6 +86,14 @@ const Home: React.FC = () => {
                             >
                                 GitHub
                             </a>
+                            <a
+                                href="https://letterboxd.com/masonlav"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.linkedinLink}
+                            >
+                                Letterboxd
+                            </a>
                         </div>
                     </div>
                     <div className={styles.contentBubble}>

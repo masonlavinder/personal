@@ -1,6 +1,19 @@
 /* LinkList.module.css */
 .mainWrapper {
-  margin-inline: 100px;
+  padding-inline: 100px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .mainWrapper {
+    padding-inline: var(--spacing-2xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .mainWrapper {
+    padding-inline: var(--spacing-md);
+  }
 }
 
 .linkListTitle {
@@ -75,6 +88,13 @@
   gap: var(--spacing-lg);
 }
 
+@media (max-width: 768px) {
+  .linkList {
+    grid-template-columns: 1fr;
+    padding: var(--spacing-md);
+  }
+}
+
 .linkItem {
   padding: var(--spacing-lg);
   transition: all 0.2s ease;
@@ -84,6 +104,12 @@
   flex-direction: column;
   height: auto;
   border: 2px solid var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .linkItem {
+    padding: var(--spacing-md);
+  }
 }
 
 .linkItem:hover {

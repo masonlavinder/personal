@@ -1,6 +1,19 @@
 /* Blog.module.css */
 .mainWrapper {
-    margin-inline: 100px;
+    padding-inline: 100px;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .mainWrapper {
+      padding-inline: var(--spacing-2xl);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .mainWrapper {
+      padding-inline: var(--spacing-md);
+    }
   }
 
   .searchInput {
@@ -70,6 +83,13 @@
     overflow-y: auto;
   }
 
+  @media (max-width: 768px) {
+    .postList {
+      padding: var(--spacing-md);
+      max-height: none;
+    }
+  }
+
   .postItem {
     border-bottom: 1px solid var(--accent-color);
     padding: var(--spacing-lg);
@@ -81,6 +101,12 @@
 
   .postItem:last-child {
     margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .postItem {
+      padding: var(--spacing-md);
+    }
   }
 
   .postItem:hover {
