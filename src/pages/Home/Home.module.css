@@ -439,14 +439,14 @@
     }
 
     .socialLinksContainer {
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-lg);
     }
 
     @media (max-width: 768px) {
         .socialLinksContainer {
-            flex-direction: column;
+            grid-template-columns: 1fr;
             gap: var(--spacing-md);
         }
     }
