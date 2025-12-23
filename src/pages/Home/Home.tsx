@@ -61,8 +61,8 @@ const Home: React.FC = () => {
                         <p>I love getting outside. </p>
                         <p>Running and fitness are big parts of my life (10+ half marathons and 1 full marathon completed so far). I also love cycling to take some strain off my legs. I grew up in the mountains so I love to hike and trail run when I can. Fishing is a newer hobby that I get to do with family.</p>
                         <h3>All Time Greats List</h3>
-                        <p>Books (Fiction) - Dune, East of Eden, The Hobit, The Alchemist </p>
-                        <p>Books (Non-Fiction) - Kitchen Confidential, The Psycology of Money, Washington: A Life </p>
+                        <p>Books (Fiction) - Dune, East of Eden, The Hobbit, The Alchemist</p>
+                        <p>Books (Non-Fiction) - Kitchen Confidential, The Psychology of Money, Washington: A Life </p>
                         <p>Movies - Ferris Bueller's Day Off, Interstellar, LOTR, Inglourious Basterds, Empire Strikes Back</p>
                     </div>
                 </div>
